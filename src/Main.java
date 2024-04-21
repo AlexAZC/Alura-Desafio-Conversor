@@ -1,15 +1,39 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import exchangeApi.CambioDeMoneda;
+import exchangeApi.Conversion;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        MenuDeSistema menu = new MenuDeSistema();
+
+
+
+        List<CambioDeMoneda> historial = new ArrayList<>();
+        do {
+
+            /************** API-CONVERSION **************/
+
+            Conversion consultaApi = new Conversion();
+            CambioDeMoneda cambioDeMoneda = consultaApi.resultado("EUR", "PEN", 25);
+            historial.add(cambioDeMoneda);
+
         }
+        while (opcion > 0 && opcion < 19);
+
+
+
+
+
+
+
+
+
+
     }
+
+
 }
