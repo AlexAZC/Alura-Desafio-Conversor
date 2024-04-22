@@ -13,7 +13,7 @@ public class Conversion {
 
     public CambioDeMoneda resultado(String monedaBase, String monedaObjetivo, double cantidad){
 
-        URI url = URI.create("https://v6.exchangerate-api.com/v6/53c8aad1ef27bbcd816b1e1f/pair/" + monedaBase + "/" + monedaObjetivo + "/" + cantidad);
+        URI url = URI.create("https://v6.exchangerate-api.com/v6/503fcc403429a68a02ca248c/pair/" + monedaBase + "/" + monedaObjetivo + "/" + cantidad);
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
